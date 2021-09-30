@@ -12,6 +12,13 @@ export const WithText = () => (
   />
 );
 
+export const WithText2 = () => (
+  <TestComponent
+    heading="I am a test component 2"
+    content={<h2>Made with love by Harvey 2</h2>}
+  />
+);
+
 export const WithButtons = () => (
   <TestComponent
     heading="I have a button"

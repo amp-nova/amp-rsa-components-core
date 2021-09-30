@@ -1,0 +1,9 @@
+// Generated with util/create-component.js
+@import "../variables.scss";
+@import "../typography.scss";
+
+.faq{
+  @include font-defaults;
+
+  color: $amp-black;
+}
