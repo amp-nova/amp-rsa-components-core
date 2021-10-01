@@ -1,67 +1,107 @@
-/**
- * Read https://storybook.js.org/docs/react/configure/overview#configure-story-rendering
- * for more information about the purpose of this file.
- *
- * Use preview.js for global code (such as CSS imports or JavaScript mocks)
- * that applies to all stories. For example, `import thirdPartyCss.css`.
- *
- * This file can have three exports:
- * - decorators - an array of global decorators
- * - parameters - an object of global parameters
- * - globalTypes - definition of globalTypes
- */
+import React from 'react';
+import { addDecorator } from '@storybook/react';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 
-/**
- * Decorators
- *
- * A decorator is a way to wrap a story in extra “rendering” functionality.
- *
- * Example:
- *
- * import React from 'react';
- * export const decorators = [(Story) => <div style={{ margin: '3em' }}><Story/></div>];
- *
- * Each story throughout the library will be wrapped in a div with a margin of 3
- */
+export const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#000",
+      },
+      secondary: {
+        main: "#d54d4d",
+      },
+      background: {
+        default: "#fff",
+      },
+      grey: {
+        A100: "#333333",
+      },
+      text: {
+        primary: "#333333",
+      },
+      divider: "#d5d5d5",
+    },
+    shape: {
+      borderRadius: 0,
+    },
+    typography: {
+      fontFamily: "'Roboto Condensed', sans-serif",
+      h1: {
+        fontSize: "40px",
+        color: "#666",
+        lineHeight: "44px",
+        fontFamily: "'Montserrat', sans-serif",
+        fontWeight: 400,
+        textTransform: "uppercase",
+      },
+      h2: {
+        fontSize: "24px",
+        color: "#666",
+        fontFamily: "'Montserrat', sans-serif",
+        fontWeight: 400,
+        textTransform: "uppercase",
+      },
+      h3: {
+        fontSize: "18px",
+        color: "#231f20",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 700,
+      },
+      h4: {
+        fontSize: "18px",
+        color: "#231f20",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 400,
+      },
+      h5: {
+        fontSize: "12px",
+        color: "#999",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 400,
+      },
+      h6: {
+        fontSize: "11px",
+        color: "#231f20",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 400,
+      },
+      subtitle1: {
+        fontSize: "14px",
+        color: "#231f20",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 700,
+      },
+      subtitle2: {
+        fontSize: "16px",
+        color: "#231f20",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 400,
+      },
+      body1: {},
+      body2: {
+        fontSize: "13px",
+        color: "#666",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 400,
+      },
+      button: {
+        fontSize: "13px",
+        color: "#fff",
+        backgroundColor: "#999",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 400,
+      },
+      caption: {
+        fontSize: "13px",
+        color: "#666",
+        fontFamily: "'Roboto Condensed', sans-serif",
+        fontWeight: 400,
+        fontStyle: "italic",
+      },
+    },
+  })
 
-/**
- * Parameters
- *
- * Most Storybook addons are configured via a parameter-based API.
- * You can set global parameters in this file
- *
- * export const parameters = {
- *   backgrounds: {
- *     values: [
- *       { name: 'red', value: '#f00' },
- *       { name: 'green', value: '#0f0' },
- *     ],
- *   },
- * };
- *
- * With backgrounds, you configure the list of backgrounds that every story can render in.
- */
-
-/**
- * Global Types
- *
- * Global Types allow you to add your own toolbars by creating
- * globalTypes with a toolbar annotation:
- *
- * For example:
- *
- * export const globalTypes = {
- *   theme: {
- *     name: 'Theme',
- *     description: 'Global theme for components',
- *     defaultValue: 'light',
- *     toolbar: {
- *       icon: 'circlehollow',
- *       // array of plain string values or MenuItem shape
- *       items: ['light', 'dark'],
- *       },
- *     },
- *   };
- *
- * Will add a new dropdown in your toolbar with options light and dark.
- **/
+addDecorator((story) => (
+    <ThemeProvider theme={theme}>{story()}</ThemeProvider>
+));
