@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas, Props } from '@storybook/addon-docs';
 import { FAQ } from './FAQ'
 
-<Meta title="Core/FAQ" component={FAQ} />
+<Meta title="Components/FAQ" component={FAQ} />
 
 export const Template = (args) => <FAQ {...args } />
 
@@ -39,3 +39,59 @@ Please note: up to three characters and/or symbols can be personalised. Symbols 
 ## Props
 
 <Props of={FAQ} />
+
+## Amplience Schema
+[download](#)
+
+```json
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://amp-rsa.amplience.com/faq.json",
+	"title": "FAQ",
+	"description": "FAQ",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"header": {
+			"title": "header",
+			"description": "FAQ Header",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 100
+		},
+		"items": {
+			"title": "FAQ",
+			"description": "description",
+			"type": "array",
+			"minItems": 0,
+			"maxItems": 10,
+			"items": {
+				"type": "object",
+				"properties": {
+					"question": {
+						"title": "question",
+						"description": "description",
+						"type": "string",
+						"minLength": 0,
+						"maxLength": 100
+					},
+					"answer": {
+						"title": "answer",
+						"description": "description",
+						"type": "string",
+						"format": "markdown"
+					}
+				}
+			}
+		}
+	},
+	"propertyOrder": [
+		"header",
+		"items"
+	]
+}
+```

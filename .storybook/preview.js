@@ -2,6 +2,35 @@ import React from 'react';
 import { addDecorator } from '@storybook/react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { createTheme } from '@material-ui/core/styles';
+import anysort from 'anysort'
+import { addParameters } from '@storybook/react'
+
+addParameters({
+  options: {
+    /**
+     * display the top-level grouping as a "root" in the sidebar
+     * @type {Boolean}
+     */
+    showRoots: true,
+    storySort: (previous, next) => {
+      const [previousStory, previousMeta] = previous
+      const [nextStory, nextMeta] = next
+
+      return anysort(previousMeta.kind, nextMeta.kind, [
+        'Overview/Introduction',
+        'Overview/Getting Started',
+        'Overview/Themes',
+        'Overview/**',
+        'Usage/**',
+        'Views/**',
+        'Layout/**',
+        'Components/**',
+        'Fields/**',
+        'Widgets/**',
+      ])
+    }
+  },
+})
 
 export const theme = createTheme({
     palette: {
