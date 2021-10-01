@@ -4,11 +4,14 @@ import { Link, Typography, Accordion, AccordionSummary, AccordionDetails } from 
 import ReactMarkdown from 'markdown-to-jsx';
 import { ExpandMore } from '@material-ui/icons';
 
-import { FAQProps } from "./FAQ.types";
+export interface FAQProps {
+    header?: string;
+    items: any;
+}
 
 import "./FAQ.scss";
 
-const FAQ: FC<FAQProps> = ({
+export const FAQ: FC<FAQProps> = ({
     header = "FAQ",
     items = []
 }) => {
@@ -56,5 +59,3 @@ const FAQ: FC<FAQProps> = ({
         </div>
     );
 };
-
-export default FAQ;
