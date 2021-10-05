@@ -40,8 +40,7 @@ Please note: up to three characters and/or symbols can be personalised. Symbols 
 
 <Props of={FAQ} />
 
-## Amplience Schema
-[download](#)
+## Content Schema
 
 ```json
 {
@@ -93,5 +92,29 @@ Please note: up to three characters and/or symbols can be personalised. Symbols 
 		"header",
 		"items"
 	]
+}
+```
+
+## Sample Content Item
+
+```json
+{
+  "content": {
+      "_meta": {
+        "name": "Sample FAQ",
+        "schema": "https://amp-rsa.amplience.com/faq.json"
+      },
+      "header": "Sample FAQ",
+      "items": [
+        {
+          "question": "How much duty and tax will I have to pay?",
+          "answer": "You will not be required to pay any import taxes or duties.\n\nFor any further queries, please [Contact Us](#)."
+        },
+        {
+          "question": "How can I personalise my item?",
+          "answer": "If the option to personalise is available it will be displayed on the product page for the item. You can select and preview your chosen characters and/or symbols for each product before adding it to your basket.\n\nPlease note: up to three characters and/or symbols can be personalised. Symbols are not available for all products."
+        }
+      ]
+  }
 }
 ```
