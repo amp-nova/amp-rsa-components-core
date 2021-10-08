@@ -2,7 +2,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import FAQ from "./FAQ";
+import { FAQ } from "./FAQ";
 import { FAQProps } from "./FAQ.types";
 
 describe("FAQ Component", () => {
