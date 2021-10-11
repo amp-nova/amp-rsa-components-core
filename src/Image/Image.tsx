@@ -10,56 +10,11 @@ export const Image: FC<ImageProps> = ({
     image,
     imageAltText,
     seoText,
-    query,
-    roundel
+    query
  }) => {
 
     if (!image) {
         return null;
-    }
-    const getRoundelConfig = (roundel: any) => {
-        if (
-            roundel &&
-            roundel[0] &&
-            roundel[0].roundel &&
-            roundel[0].roundel.name
-        ) {
-            const roundelParams = [];
-            let imageRoundelIndex;
-            for (let x = 0; x < roundel.length; x++) {
-                let roundelParam = '';
-                switch (roundel[x].roundelPosition) {
-                    case 'Bottom Right':
-                        roundelParam = 'p1_img=';
-                        imageRoundelIndex = 1;
-                        break;
-                    case 'Bottom Left':
-                        roundelParam = 'p2_img=';
-                        imageRoundelIndex = 2;
-                        break;
-                    case 'Top Left':
-                        roundelParam = 'p3_img=';
-                        imageRoundelIndex = 3;
-                        break;
-                    case 'Top Right':
-                        roundelParam = 'p4_img=';
-                        imageRoundelIndex = 4;
-                        break;
-                }
-
-                const roundelRatio = roundel[x].roundelRatio;
-                roundelParam +=
-                    roundel[x].roundel.name +
-                    (roundelRatio
-                        ? '&roundelRatio' + imageRoundelIndex + '=' + roundelRatio
-                        : '');
-                roundelParams.push(roundelParam);
-            }
-
-            return roundelParams.join('&');
-        } else {
-            return '';
-        }
     }
 
     const getImageHost = (host: string) => {
@@ -83,9 +38,6 @@ export const Image: FC<ImageProps> = ({
         }
         if (query) {
             queryString += `&${query}`;
-        }
-        if (roundel && roundel[0] && roundel[0].roundel && roundel[0].roundelPosition && roundel[0].roundelRatio) {
-            queryString += `&$roundel$&${getRoundelConfig(roundel)}`
         }
         return `${baseUrl}?${queryString}`;
     };

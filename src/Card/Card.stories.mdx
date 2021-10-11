@@ -1,0 +1,133 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs';
+import { Card } from './Card'
+
+<Meta title="Components/Card" component={Card} />
+
+export const Template = (args) => <Card {...args } />
+
+# Card Component
+
+With `MDX`, we can define a story for `Card` right in the middle of our
+Markdown documentation.
+
+## Story
+
+<Canvas>
+  <Story 
+    name="Sample Card"
+    args={{"image": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "name": "210106_Wellness_FeaturedImage",
+        "endpoint": "amprsa",
+        "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+      },
+      "imageAltText": "Wake up and move your body",
+      "_meta": {
+        "schema": "https://amp-rsa.amplience.com/image.json"
+      }
+    },
+    "links": [
+      {
+        "_meta": {
+          "schema": "https://amp-rsa.amplience.com/link.json"
+        },
+        "label": "Explore the edit",
+        "type": "URL",
+        "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+      }
+    ],
+    "cardName": "Wake up and move your body",
+    "description": "Whether you’re looking to kickstart your New Year’s resolution or are searching for ways to add health and wellness into your lifestyle, explore our Gymwear and Fitness Essentials edit. Filled with gym clothing, accessories, equipment and more.",
+    "_meta": {
+      "name": "Card - Wake up and move your body",
+      "schema": "https://amp-rsa.amplience.com/card.json"
+    }}}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<Props of={Card} />
+
+## Content Schema
+
+```json
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://amp-rsa.amplience.com/faq.json",
+	"title": "FAQ",
+	"description": "FAQ",
+	"allOf": [
+		{
+			"$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"header": {
+			"title": "header",
+			"description": "FAQ Header",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 100
+		},
+		"items": {
+			"title": "FAQ",
+			"description": "description",
+			"type": "array",
+			"minItems": 0,
+			"maxItems": 10,
+			"items": {
+				"type": "object",
+				"properties": {
+					"question": {
+						"title": "question",
+						"description": "description",
+						"type": "string",
+						"minLength": 0,
+						"maxLength": 100
+					},
+					"answer": {
+						"title": "answer",
+						"description": "description",
+						"type": "string",
+						"format": "markdown"
+					}
+				}
+			}
+		}
+	},
+	"propertyOrder": [
+		"header",
+		"items"
+	]
+}
+```
+
+## Sample Content Item
+
+```json
+{
+  "content": {
+      "_meta": {
+        "name": "Sample FAQ",
+        "schema": "https://amp-rsa.amplience.com/faq.json"
+      },
+      "header": "Sample FAQ",
+      "items": [
+        {
+          "question": "How much duty and tax will I have to pay?",
+          "answer": "You will not be required to pay any import taxes or duties.\n\nFor any further queries, please [Contact Us](#)."
+        },
+        {
+          "question": "How can I personalise my item?",
+          "answer": "If the option to personalise is available it will be displayed on the product page for the item. You can select and preview your chosen characters and/or symbols for each product before adding it to your basket.\n\nPlease note: up to three characters and/or symbols can be personalised. Symbols are not available for all products."
+        }
+      ]
+  }
+}
+```

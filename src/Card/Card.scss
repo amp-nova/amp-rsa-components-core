@@ -2,7 +2,11 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.foo-bar {
-  @include font-defaults;
-
+.card {
+  margin: 16;
+  display: "flex";
+  flex-direction: "column";
+  justify-content: "space-between";
+  border: "none";
+  box-shadow: "none";
 }

@@ -6,5 +6,4 @@ export interface ImageProps {
     display?: 'Point of Interest' | "Hotspots" | "Static";
     imageAltText?: string;
     seoText?: string;
-    roundel?: any;
 }
