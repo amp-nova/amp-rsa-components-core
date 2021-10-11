@@ -58,7 +58,7 @@ export const Card: React.FC<CardProps> = ({
       </CardContent>
       <CardActions className={classes.cardActions}>
         {
-          links.map((link: any) => {
+          links && links.map((link: any) => {
             if (link.label) {
               return (
                 <Button className={classes.links}>

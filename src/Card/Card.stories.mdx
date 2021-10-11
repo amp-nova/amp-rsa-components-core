@@ -12,6 +12,8 @@ Markdown documentation.
 
 ## Story
 
+### Sample Card
+
 <Canvas>
   <Story 
     name="Sample Card"
@@ -46,6 +48,61 @@ Markdown documentation.
       "name": "Card - Wake up and move your body",
       "schema": "https://amp-rsa.amplience.com/card.json"
     }}}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Image Only Card
+
+<Canvas>
+  <Story 
+    name="Image Only Card"
+    args={{
+	"image": {
+      "image": {
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        },
+        "name": "210106_Wellness_FeaturedImage",
+        "endpoint": "amprsa",
+        "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+      },
+      "imageAltText": "Wake up and move your body",
+      "_meta": {
+        "schema": "https://amp-rsa.amplience.com/image.json"
+      }
+    },
+    "_meta": {
+      "name": "Card - Wake up and move your body",
+      "schema": "https://amp-rsa.amplience.com/card.json"
+    }}}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Text Only Card
+
+<Canvas>
+  <Story 
+    name="Text Only Card"
+    args={{
+      "links": [
+        {
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/link.json"
+          },
+          "label": "Explore the edit",
+          "type": "URL",
+          "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+        }
+      ],
+      "cardName": "Wake up and move your body",
+      "description": "Whether you’re looking to kickstart your New Year’s resolution or are searching for ways to add health and wellness into your lifestyle, explore our Gymwear and Fitness Essentials edit. Filled with gym clothing, accessories, equipment and more.",
+      "_meta": {
+        "name": "Card - Wake up and move your body",
+        "schema": "https://amp-rsa.amplience.com/card.json"
+      }
+    }}>
       {Template.bind({})}
   </Story>
 </Canvas>
