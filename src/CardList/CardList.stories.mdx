@@ -1,0 +1,496 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs';
+import { CardList } from './CardList'
+
+<Meta title="Components/CardList" component={CardList} />
+
+export const Template = (args) => <CardList {...args } />
+
+# CardList Component
+
+With `MDX`, we can define a story for `CardList` right in the middle of our
+Markdown documentation.
+
+## Story
+
+### Sample Card List with 2 items
+
+<Canvas>
+  <Story 
+    name="Sample Card List 2"
+    args={{
+    "heroList": false,
+    "slider": false,
+    "cards": [
+      {
+        "_meta": {
+          "name": "Card - Wake up and move your body",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "94cc2773-7190-4df3-8f0f-8829427cdb11",
+            "name": "210106_Wellness_FeaturedImage",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Wake up and move your body",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Explore the edit",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+          }
+        ],
+        "cardName": "Wake up and move your body",
+        "description": "Whether you’re looking to kickstart your New Year’s resolution or are searching for ways to add health and wellness into your lifestyle, explore our Gymwear and Fitness Essentials edit. Filled with gym clothing, accessories, equipment and more."
+      },
+      {
+        "_meta": {
+          "name": "Card - Maximise your skincare with Clinique",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "7590dbb7-8378-4c4f-8cc5-7191c6c40871",
+            "name": "clinique-brand-image",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Maximise your skincare with Clinique",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Shop Clinique",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/brands/clinique"
+          }
+        ],
+        "cardName": "Maximise your skincare with Clinique",
+        "description": "Clinique is offering you a special treat – simply purchase any 2 Clinique products, one to be Skincare or Foundation and receive an exclusive 7-piece Clinique Beauty Bag as a complimentary gift. With everything from skincare to bath & bodycare, shop to discover effective formulas that deliver remarkable results."
+      }
+    ],
+    "_meta": {
+      "name": "Card List - HP featured cat row 1",
+      "schema": "https://amp-rsa.amplience.com/cardList.json"
+    }
+  }}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Sample Card List with 3 items
+
+<Canvas>
+  <Story 
+    name="Sample Card List 3"
+    args={{
+    "heroList": false,
+    "slider": false,
+    "cards": [
+      {
+        "_meta": {
+          "name": "Card - Wake up and move your body",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "94cc2773-7190-4df3-8f0f-8829427cdb11",
+            "name": "210106_Wellness_FeaturedImage",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Wake up and move your body",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Explore the edit",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+          }
+        ],
+        "cardName": "Wake up and move your body",
+        "description": "Whether you’re looking to kickstart your New Year’s resolution or are searching for ways to add health and wellness into your lifestyle, explore our Gymwear and Fitness Essentials edit. Filled with gym clothing, accessories, equipment and more."
+      },
+      {
+        "_meta": {
+          "name": "Card - Maximise your skincare with Clinique",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "7590dbb7-8378-4c4f-8cc5-7191c6c40871",
+            "name": "clinique-brand-image",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Maximise your skincare with Clinique",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Shop Clinique",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/brands/clinique"
+          }
+        ],
+        "cardName": "Maximise your skincare with Clinique",
+        "description": "Clinique is offering you a special treat – simply purchase any 2 Clinique products, one to be Skincare or Foundation and receive an exclusive 7-piece Clinique Beauty Bag as a complimentary gift. With everything from skincare to bath & bodycare, shop to discover effective formulas that deliver remarkable results."
+      },
+      {
+        "_meta": {
+          "name": "Card - Wake up and move your body",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "94cc2773-7190-4df3-8f0f-8829427cdb11",
+            "name": "210106_Wellness_FeaturedImage",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Wake up and move your body",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Explore the edit",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+          }
+        ],
+        "cardName": "Wake up and move your body",
+        "description": "Whether you’re looking to kickstart your New Year’s resolution or are searching for ways to add health and wellness into your lifestyle, explore our Gymwear and Fitness Essentials edit. Filled with gym clothing, accessories, equipment and more."
+      }
+    ],
+    "_meta": {
+      "name": "Card List - HP featured cat row 1",
+      "schema": "https://amp-rsa.amplience.com/cardList.json"
+    }
+  }}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Sample Card List with 4 items and no text
+
+<Canvas>
+  <Story 
+    name="Sample Card List 4"
+    args={{
+    "heroList": false,
+    "slider": false,
+    "cards": [
+      {
+        "_meta": {
+          "name": "Card - Wake up and move your body",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "94cc2773-7190-4df3-8f0f-8829427cdb11",
+            "name": "210106_Wellness_FeaturedImage",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Wake up and move your body",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Explore the edit",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+          }
+        ]
+      },
+      {
+        "_meta": {
+          "name": "Card - Maximise your skincare with Clinique",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "7590dbb7-8378-4c4f-8cc5-7191c6c40871",
+            "name": "clinique-brand-image",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Maximise your skincare with Clinique",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Shop Clinique",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/brands/clinique"
+          }
+        ]
+      },
+      {
+        "_meta": {
+          "name": "Card - Wake up and move your body",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "94cc2773-7190-4df3-8f0f-8829427cdb11",
+            "name": "210106_Wellness_FeaturedImage",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Wake up and move your body",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Explore the edit",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+          }
+        ]
+      },
+      {
+        "_meta": {
+          "name": "Card - Maximise your skincare with Clinique",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "7590dbb7-8378-4c4f-8cc5-7191c6c40871",
+            "name": "clinique-brand-image",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Maximise your skincare with Clinique",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Shop Clinique",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/brands/clinique"
+          }
+        ]
+      }
+    ],
+    "_meta": {
+      "name": "Card List - HP featured cat row 1",
+      "schema": "https://amp-rsa.amplience.com/cardList.json"
+    }
+  }}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<Props of={CardList} />
+
+## Content Type Schema
+
+```json
+{ 
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amp-rsa.amplience.com/cardList.json",
+  "title": "Card List",
+  "description": "A list of cards",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "header": {
+      "type": "string",
+      "title": "Header",
+      "description": "Header/Title for the card list",
+      "validation": "Please enter less than 50 characters",
+      "minLength": 0,
+      "maxLength": 50
+    },
+    "cards": {
+      "type": "array",
+      "title": "Cards",
+      "description": "Please select the cards to display in this list",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
+                "title": "",
+                "enum": [
+                  "https://amp-rsa.amplience.com/card.json"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 6
+    }
+  },
+  "propertyOrder": ["header", "heroList", "slider", "cards", "style"]
+}
+```
+
+## Sample Content Item
+
+```json
+{
+    "heroList": false,
+    "slider": false,
+    "cards": [
+      {
+        "_meta": {
+          "name": "Card - Wake up and move your body",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "94cc2773-7190-4df3-8f0f-8829427cdb11",
+            "name": "210106_Wellness_FeaturedImage",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Wake up and move your body",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Explore the edit",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/featured/gymwear-and-fitness-essentials"
+          }
+        ],
+        "cardName": "Wake up and move your body",
+        "description": "Whether you’re looking to kickstart your New Year’s resolution or are searching for ways to add health and wellness into your lifestyle, explore our Gymwear and Fitness Essentials edit. Filled with gym clothing, accessories, equipment and more."
+      },
+      {
+        "_meta": {
+          "name": "Card - Maximise your skincare with Clinique",
+          "schema": "https://amp-rsa.amplience.com/card.json"
+        },
+        "image": {
+          "image": {
+            "_meta": {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+            },
+            "id": "7590dbb7-8378-4c4f-8cc5-7191c6c40871",
+            "name": "clinique-brand-image",
+            "endpoint": "amprsa",
+            "defaultHost": "1kwj9tiju6tgz16c4lq8hs7n9r.staging.bigcontent.io"
+          },
+          "imageAltText": "Maximise your skincare with Clinique",
+          "_meta": {
+            "schema": "https://amp-rsa.amplience.com/image.json"
+          }
+        },
+        "links": [
+          {
+            "_meta": {
+              "schema": "https://amp-rsa.amplience.com/link.json"
+            },
+            "label": "Shop Clinique",
+            "type": "URL",
+            "value": "https://www.fenwick.co.uk/brands/clinique"
+          }
+        ],
+        "cardName": "Maximise your skincare with Clinique",
+        "description": "Clinique is offering you a special treat – simply purchase any 2 Clinique products, one to be Skincare or Foundation and receive an exclusive 7-piece Clinique Beauty Bag as a complimentary gift. With everything from skincare to bath & bodycare, shop to discover effective formulas that deliver remarkable results."
+      }
+    ],
+    "_meta": {
+      "name": "Card List - HP featured cat row 1",
+      "schema": "https://amp-rsa.amplience.com/cardList.json"
+    }
+}
+```

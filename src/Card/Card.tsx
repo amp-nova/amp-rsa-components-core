@@ -6,13 +6,15 @@ import { CardProps } from "./Card.types";
 
 const useStyles = makeStyles({
   root: {
-    margin: 16,
     display: "flex",
     flexDirection: "column" as "column",
     justifyContent: "space-between",
     border: "none",
     boxShadow: "none",
     textAlign: "center"
+  },
+  content: {
+    padding: 10
   },
   cardActions: { 
     justifyContent: "center" 
@@ -34,8 +36,8 @@ export const Card: React.FC<CardProps> = ({
   const classes = useStyles();
 
   return (
-    <Grid item xs component={MuiCard} className={classes.root}>
-      <CardContent>
+    <Grid item md component={MuiCard} className={classes.root}>
+      <CardContent className={classes.content}>
         {
           image && (
             <Image {...image} />

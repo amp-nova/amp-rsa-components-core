@@ -1,4 +1,5 @@
 // Generated with util/create-component.js
 export interface CardListProps {
-    foo: string;
+    header?: string;
+    cards?: any[];
 }

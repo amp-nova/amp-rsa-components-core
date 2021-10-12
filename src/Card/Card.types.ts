@@ -3,5 +3,5 @@ export interface CardProps {
     image?: any;
     cardName?: string;
     description?: string;
-    links?: any;
+    links?: any[];
 }

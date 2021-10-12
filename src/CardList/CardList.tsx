@@ -1,13 +1,34 @@
 // Generated with util/create-component.js
+import { Grid, Typography } from "@material-ui/core";
 import React from "react";
+import { Card } from "../Card";
 
 import { CardListProps } from "./CardList.types";
 
-import "./CardList.scss";
-
-const CardList: React.FC<CardListProps> = ({ foo }) => (
-    <div data-testid="CardList" className="foo-bar">{foo}</div>
-);
-
-export default CardList;
-
+export const CardList: React.FC<CardListProps> = ({ 
+    header,
+    cards
+ }) => {
+    return (
+        <div>
+        {
+            header && ( 
+                <Typography variant="h2" component="h2">
+                    {header}
+                </Typography>
+            )
+        }
+        {
+            cards && (
+                <Grid container>
+                    {
+                        cards.map((card: any, index: number) => {
+                            return <Card key={ Math.random().toString(36).substr(2, 9) } {...card} />
+                        })
+                    }
+                </Grid>
+            )
+        }
+        </div>
+    )
+ };
