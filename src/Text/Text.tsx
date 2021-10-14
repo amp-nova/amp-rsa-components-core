@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { Link, makeStyles, Typography } from '@material-ui/core';
 import ReactMarkdown from 'markdown-to-jsx';
 import { TextProps } from './Text.types';
+import './Text.scss';
 
 const useStyles = makeStyles({
     root: {
@@ -39,7 +40,7 @@ export const Text: FC<TextProps> = ({
     };
 
     return (
-        <div className={classes.root} style={{textAlign: align}}>
+        <div className="amp-text" style={{textAlign: align}}>
             {
                 text && <ReactMarkdown options={options}>{text}</ReactMarkdown>
             }

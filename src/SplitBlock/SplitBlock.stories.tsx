@@ -6,6 +6,6 @@ export default {
     title: "SplitBlock"
 };
 
-export const WithBar = () => <SplitBlock foo="bar" />;
+export const WithBar = () => <SplitBlock foo={`# bar\nBar bar`} />;
 
-export const WithBaz = () => <SplitBlock foo="baz" />;
+export const WithBaz = () => <SplitBlock foo={`#baz\nBaz baz`} />;

@@ -2,8 +2,8 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.faq{
+.amp-faq{
   @include font-defaults;
 
-  color: $amp-green;
+  color: $amp-gray;
 }

@@ -4,6 +4,7 @@ import { Link, Typography, Accordion, AccordionSummary, AccordionDetails } from 
 import ReactMarkdown from 'markdown-to-jsx';
 import { ExpandMore } from '@material-ui/icons';
 import { FAQProps } from './FAQ.types';
+import './FAQ.scss';
 
 export const FAQ: FC<FAQProps> = ({
     header = "FAQ",
@@ -30,7 +31,7 @@ export const FAQ: FC<FAQProps> = ({
     };
 
     return (
-        <div data-testid="FAQ" className="faq">
+        <div data-testid="FAQ" className="amp-faq">
             <Typography variant="h3" component="h3" align="center">{header}</Typography>
             <div style={{ marginTop: 30 }}>
                 {
@@ -40,7 +41,7 @@ export const FAQ: FC<FAQProps> = ({
                                 <AccordionSummary expandIcon={<ExpandMore />}>
                                     <Typography variant="h4" component="p">{item.question}</Typography>
                                 </AccordionSummary>
-                                <AccordionDetails>
+                                <AccordionDetails className="amp-faq">
                                     {
                                         item.answer && <ReactMarkdown options={options}>{item.answer}</ReactMarkdown>
                                     }
