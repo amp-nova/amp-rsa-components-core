@@ -16,7 +16,7 @@
     "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=7c2bb319ebd6"
+    "chromatic": "npx chromatic --project-token=24e5ab281a31"
   },
   "repository": {
     "type": "git",
