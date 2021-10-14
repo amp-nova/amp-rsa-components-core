@@ -3,13 +3,7 @@ import React, { FC } from "react";
 import { Link, Typography, Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
 import ReactMarkdown from 'markdown-to-jsx';
 import { ExpandMore } from '@material-ui/icons';
-
-export interface FAQProps {
-    header?: string;
-    items: any;
-}
-
-import "./FAQ.scss";
+import { FAQProps } from './FAQ.types';
 
 export const FAQ: FC<FAQProps> = ({
     header = "FAQ",

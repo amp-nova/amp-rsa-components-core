@@ -1,4 +1,5 @@
 // Generated with util/create-component.js
 export interface TextProps {
-    foo: string;
+    text?: string;
+    align?: "left" | "right" | "center";
 }
