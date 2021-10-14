@@ -36,7 +36,7 @@ export const Card: React.FC<CardProps> = ({
   const classes = useStyles();
 
   return (
-    <Grid item md component={MuiCard} className={classes.root}>
+    <Grid item xs={12} sm component={MuiCard} className={classes.root}>
       <CardContent className={classes.content}>
         {
           image && (
