@@ -1,0 +1,81 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs';
+import { Video } from './Video'
+
+<Meta title="Components/Video" component={Video} />
+
+export const Template = (args) => <Video {...args } />
+
+# Video Component
+
+With `MDX`, we can define a story for `Video` right in the middle of our
+Markdown documentation.
+
+## Story
+
+<Canvas>
+  <Story 
+    name="Sample Video"
+    args={{
+        "video": {
+            "name": "AnyaFinn-Shoppable",
+            "endpoint": "amprsa",
+            "defaultHost": "cdn.media.amplience.net"
+        }
+    }}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<Props of={Video} />
+
+## Content Type Schema
+
+```json
+{ 
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://amp-rsa.amplience.com/video.json",
+  "title": "Video",
+  "description": "A reusable component to display a video",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "video": {
+      "type": "object",
+      "title": "Video",
+      "description": "The video to display",
+      "anyOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
+        }
+      ]
+    }
+  }
+}
+```
+
+## Sample Content Item
+
+```json
+{
+  "content": {
+    "video": {
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
+      },
+      "name": "AnyaFinn-Shoppable",
+      "endpoint": "amprsa",
+      "defaultHost": "cdn.media.amplience.net"
+    },
+    "_meta": {
+      "name": "AnyaFinn - Start of Summer Video",
+      "schema": "https://amp-rsa.amplience.com/video.json"
+    }
+  }
+}
+```
