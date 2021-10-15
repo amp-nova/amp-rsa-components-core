@@ -17,7 +17,8 @@ const useStyles = makeStyles({
     padding: 10
   },
   cardActions: { 
-    justifyContent: "center" 
+    justifyContent: "center",
+    paddingBottom: 20
   },
   links: { 
     paddingLeft: 20, 
