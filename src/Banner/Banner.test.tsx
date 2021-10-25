@@ -2,7 +2,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Banner from "./Banner";
+import { Banner } from "./Banner";
 import { BannerProps } from "./Banner.types";
 
 describe("Test Component", () => {

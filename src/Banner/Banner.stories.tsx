@@ -1,11 +1,11 @@
 // Generated with util/create-component.js
 import React from "react";
-import SimpleBanner from "./Banner";
+import { Banner } from "./Banner";
 
 export default {
     title: "Banner"
 };
 
-export const WithBar = () => <SimpleBanner foo="bar" />;
+export const WithBar = () => <Banner foo="bar" />;
 
-export const WithBaz = () => <SimpleBanner foo="baz" />;
+export const WithBaz = () => <Banner foo="baz" />;

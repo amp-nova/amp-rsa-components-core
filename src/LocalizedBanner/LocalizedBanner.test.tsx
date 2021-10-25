@@ -2,7 +2,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import LocalizedBanner from "./LocalizedBanner";
+import { LocalizedBanner } from "./LocalizedBanner";
 import { LocalizedBannerProps } from "./LocalizedBanner.types";
 
 describe("Test Component", () => {

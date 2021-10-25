@@ -5,9 +5,6 @@ import { BannerProps } from "./Banner.types";
 
 import "./Banner.scss";
 
-const Banner: React.FC<BannerProps> = ({ foo }) => (
+export const Banner: React.FC<BannerProps> = ({ foo }) => (
     <div data-testid="Banner" className="foo-bar">{foo}</div>
 );
-
-export default Banner;
-

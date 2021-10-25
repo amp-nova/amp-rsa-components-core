@@ -1,6 +1,6 @@
 // Generated with util/create-component.js
 import React from "react";
-import LocalizedBanner from "./LocalizedBanner";
+import { LocalizedBanner } from "./LocalizedBanner";
 
 export default {
     title: "LocalizedBanner"
