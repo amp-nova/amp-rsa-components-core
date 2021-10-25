@@ -2,11 +2,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import SimpleBanner from "./SimpleBanner";
-import { SimpleBannerProps } from "./SimpleBanner.types";
+import LocalizedBanner from "./LocalizedBanner";
+import { LocalizedBannerProps } from "./LocalizedBanner.types";
 
 describe("Test Component", () => {
-  let props: SimpleBannerProps;
+  let props: LocalizedBannerProps;
 
   beforeEach(() => {
     props = {
@@ -14,13 +14,13 @@ describe("Test Component", () => {
     };
   });
 
-  const renderComponent = () => render(<SimpleBanner {...props} />);
+  const renderComponent = () => render(<LocalizedBanner {...props} />);
 
   it("should render foo text correctly", () => {
     props.foo = "harvey was here";
     const { getByTestId } = renderComponent();
 
-    const component = getByTestId("SimpleBanner");
+    const component = getByTestId("LocalizedBanner");
 
     expect(component).toHaveTextContent("harvey was here");
   });

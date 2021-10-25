@@ -1,4 +1,4 @@
 // Generated with util/create-component.js
-export interface SimpleLocalizedBannerProps {
+export interface BannerProps {
     foo: string;
 }
