@@ -1,9 +1,11 @@
+import { ImageProps } from "../Image";
+
 export interface CardProps {
 
     /**
      * Image Content Item
      */
-    image?: any;
+    image?: ImageProps;
 
     /**
      * Title of the Card

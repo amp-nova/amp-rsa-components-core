@@ -1,10 +1,12 @@
 // Generated with util/create-component.js
+import { ImageProps } from "../Image";
+
 export interface BannerProps {
 
     /**
      * Image object
      */
-    image?: any;
+    image?: ImageProps;
     
     /**
      * Info Panel opacity

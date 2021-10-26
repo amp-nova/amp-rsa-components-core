@@ -1,3 +1,5 @@
+import { CardProps } from '../Card/Card.types';
+
 // Generated with util/create-component.js
 export interface CardListProps {
 
@@ -9,5 +11,5 @@ export interface CardListProps {
     /**
      * List of Cards
      */
-    cards?: any[];
+    cards?: CardProps[];
 }
