@@ -52,6 +52,47 @@ Markdown documentation.
   </Story>
 </Canvas>
 
+### Sample Localized Banner
+
+<Canvas>
+  <Story 
+    name="Sample Localized Banner"
+    args={{
+        "image": {
+            "image": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                },
+                "id": "41e5e5c3-6ae0-421a-9deb-aba918c505f0",
+                "name": "banner-text-top-right-2-1-large-desktop",
+                "endpoint": "amprsa",
+                "defaultHost": "cdn.media.amplience.net"
+            },
+            "imageAltText": "New Collection",
+            "seoText": "new-collection, summer",
+            "_meta": {
+                "schema": "https://amp-rsa.amplience.com/image.json"
+            }
+        },
+        "opacity": 0.9,
+        "textPositioning": {
+            "textPositionHorizontal": "center",
+            "textPositionVertical": "middle"
+        },
+        "bannerText": {
+            "header": "Nouvelle Collection",
+            "subheader": "Sous-Titre",
+            "description": "Description"
+        },
+        "ctaSettings": {
+            "buttonText": "Découvrir maintenant !",
+            "linkUrl": "/"
+        }
+    }}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
 ## Props
 
 <Props of={Banner} />
@@ -198,6 +239,226 @@ Markdown documentation.
         },
         "ctaSettings": {
             "buttonText": "Discover Now!",
+            "linkUrl": "/"
+        }
+    }
+}
+```
+
+## Localized Content Type Schema
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amp-rsa.amplience.com/localized-banner.json",
+  "title": "Banner",
+  "description": "Banner Content Type",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "image": {
+      "title": "Banner Image",
+      "description": "Main Image",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://amp-rsa.amplience.com/image.json"
+        }
+      ]
+    },
+    "opacity": {
+      "title":"Panel opacity",
+      "type": "number",
+      "default": 0.9
+    },
+    "textPositioning": {
+      "title": "Text Positioning",
+      "type": "object",
+      "properties": {
+        "textPositionHorizontal": {
+          "title": "Horizontal Text Position",
+          "description": "Select: Left / Center / Right",
+          "type": "string",
+          "default": "center",
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ]
+        },
+        "textPositionVertical": {
+          "title": "Vertical Text Position",
+          "description": "Select: Top / Middle / Bottom",
+          "type": "string",
+          "default": "middle",
+          "enum": [
+            "top",
+            "middle",
+            "bottom"
+          ]
+        }
+      }
+    },
+    "bannerText": {
+      "title": "Banner Text Settings",
+      "type": "object",
+      "properties": {
+        "header": {
+          "title": "Header",
+          "description": "Add header text",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+            }
+          ]
+        },
+        "subheader": {
+          "title": "Subheader",
+          "description": "Add Subheader text",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+            }
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "Add description text",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+            }
+          ]
+        }
+      }
+    },
+    "ctaSettings": {
+      "title": "Call-to-Action Settings",
+      "type": "object",
+      "properties": {
+        "buttonText": {
+          "title": "CTA Text",
+          "allOf": [
+            {
+              "$ref": "http://bigcontent.io/cms/schema/v1/localization#/definitions/localized-string"
+            }
+          ]
+        },
+        "linkUrl": {
+          "title": "CTA URL",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "propertyOrder": [
+    "image",
+    "opacity",
+    "textPositioning",
+    "bannerText",
+    "ctaSettings"
+  ]
+}
+```
+
+## Sample Localized Content Item
+
+```json
+{
+    "content": {
+        "_meta": {
+            "name": "Localized Banner - Example",
+            "schema": "https://amp-rsa.amplience.com/localized-banner.json",
+            "deliveryId": "5442e6a5-7ff7-4169-a427-aa1b9cc24e0e"
+        },
+        "image": {
+            "image": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                },
+                "id": "41e5e5c3-6ae0-421a-9deb-aba918c505f0",
+                "name": "banner-text-top-right-2-1-large-desktop",
+                "endpoint": "amprsa",
+                "defaultHost": "cdn.media.amplience.net"
+            },
+            "imageAltText": "New Collection",
+            "seoText": "new-collection, summer",
+            "_meta": {
+                "schema": "https://amp-rsa.amplience.com/image.json"
+            }
+        },
+        "opacity": 0.9,
+        "textPositioning": {
+            "textPositionHorizontal": "center",
+            "textPositionVertical": "middle"
+        },
+        "bannerText": {
+            "header": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "New Collection"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Nouvelle Collection"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "subheader": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Sub-Header"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Sous-Titre"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
+            "description": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Description"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Description"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            }
+        },
+        "ctaSettings": {
+            "buttonText": {
+                "values": [
+                    {
+                        "locale": "en-US",
+                        "value": "Discover Now!"
+                    },
+                    {
+                        "locale": "fr-FR",
+                        "value": "Découvrir maintenant !"
+                    }
+                ],
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/localized-value"
+                }
+            },
             "linkUrl": "/"
         }
     }
