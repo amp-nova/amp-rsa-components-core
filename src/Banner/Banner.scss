@@ -2,8 +2,58 @@
 @import "../variables.scss";
 @import "../typography.scss";
 
-.foo-bar {
-  @include font-defaults;
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
 
-  color: $amp-green;
+  .info-panel {
+    position: absolute;
+    background-color: #ccc;
+    padding: 25px 15% 25px 15%;
+    min-width: 25%;
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+    }
+  }
+
+  .bottom {
+    bottom: 0px;
+  }
+
+  .left {
+    left: 0px;
+  }
+
+  .right {
+    right: 0px;
+  }
+
+  .top {
+    top: 0px;
+  }
+
+  .middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .center.middle {
+    transform: translateX(-50%) translateY(-50%);
+  }
+
 }

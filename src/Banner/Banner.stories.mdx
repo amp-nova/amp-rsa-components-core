@@ -1,0 +1,205 @@
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs';
+import { Banner } from './Banner'
+
+<Meta title="Components/Banner" component={Banner} />
+
+export const Template = (args) => <Banner {...args } />
+
+# Banner Component
+
+With `MDX`, we can define a story for `Banner` right in the middle of our
+Markdown documentation.
+
+## Story
+
+### Sample Banner
+
+<Canvas>
+  <Story 
+    name="Sample Banner"
+    args={{
+        "image": {
+            "image": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                },
+                "name": "banner-text-top-right-2-1-large-desktop",
+                "endpoint": "amprsa",
+                "defaultHost": "cdn.media.amplience.net"
+            },
+            "imageAltText": "New Collection",
+            "seoText": "new-collection, summer",
+            "_meta": {
+                "schema": "https://amp-rsa.amplience.com/image.json"
+            }
+        },
+        "opacity": 0.9,
+        "textPositioning": {
+            "textPositionHorizontal": "center",
+            "textPositionVertical": "middle"
+        },
+        "bannerText": {
+            "header": "New Collection",
+            "subheader": "Sub-Header",
+            "description": "Description"
+        },
+        "ctaSettings": {
+            "buttonText": "Discover Now!",
+            "linkUrl": "/"
+        }
+    }}>
+      {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<Props of={Banner} />
+
+## Content Type Schema
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amp-rsa.amplience.com/banner.json",
+  "title": "Banner",
+  "description": "Banner Content Type",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "image": {
+      "title": "Banner Image",
+      "description": "Main Image",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://amp-rsa.amplience.com/image.json"
+        }
+      ]
+    },
+    "opacity": {
+      "title":"Panel opacity",
+      "type": "number",
+      "default": 0.9
+    },
+    "textPositioning": {
+      "title": "Text Positioning",
+      "type": "object",
+      "properties": {
+        "textPositionHorizontal": {
+          "title": "Horizontal Text Position",
+          "description": "Select: Left / Center / Right",
+          "type": "string",
+          "default": "center",
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ]
+        },
+        "textPositionVertical": {
+          "title": "Vertical Text Position",
+          "description": "Select: Top / Middle / Bottom",
+          "type": "string",
+          "default": "middle",
+          "enum": [
+            "top",
+            "middle",
+            "bottom"
+          ]
+        }
+      }
+    },
+    "bannerText": {
+      "title": "Banner Text Settings",
+      "type": "object",
+      "properties": {
+        "header": {
+          "title": "Header",
+          "description": "Add header text",
+          "type": "string"
+        },
+        "subheader": {
+          "title": "Subheader",
+          "description": "Add Subheader text",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Add description text",
+          "type": "string"
+        }
+      }
+    },
+    "ctaSettings": {
+      "title": "Call-to-Action Settings",
+      "type": "object",
+      "properties": {
+        "buttonText": {
+          "title": "CTA Text",
+          "type": "string",
+          "minimum": 4,
+          "maximum": 12
+        },
+        "linkUrl": {
+          "title": "CTA URL",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "propertyOrder": [
+    "image",
+    "opacity",
+    "textPositioning",
+    "bannerText",
+    "ctaSettings"
+  ]
+}
+```
+
+## Sample Content Item
+
+```json
+{
+    "content": {
+        "_meta": {
+            "name": "Banner - Example",
+            "schema": "https://amp-rsa.amplience.com/banner.json"
+        },
+        "image": {
+            "image": {
+                "_meta": {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+                },
+                "name": "banner-text-top-right-2-1-large-desktop",
+                "endpoint": "amprsa",
+                "defaultHost": "cdn.media.amplience.net"
+            },
+            "imageAltText": "New Collection",
+            "seoText": "new-collection, summer",
+            "_meta": {
+                "schema": "https://amp-rsa.amplience.com/image.json"
+            }
+        },
+        "opacity": 0.9,
+        "textPositioning": {
+            "textPositionHorizontal": "center",
+            "textPositionVertical": "middle"
+        },
+        "bannerText": {
+            "header": "New Collection",
+            "subheader": "Sub-Header",
+            "description": "Description"
+        },
+        "ctaSettings": {
+            "buttonText": "Discover Now!",
+            "linkUrl": "/"
+        }
+    }
+}
+```

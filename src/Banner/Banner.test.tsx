@@ -10,14 +10,12 @@ describe("Test Component", () => {
 
   beforeEach(() => {
     props = {
-      foo: "bar"
     };
   });
 
   const renderComponent = () => render(<Banner {...props} />);
 
   it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("Banner");
