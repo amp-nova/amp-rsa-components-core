@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import { ImageProps } from "./Image.types";
 
 import "./Image.scss";
+import { Box } from "@material-ui/core";
 
 export const Image: FC<ImageProps> = ({ 
     display,
@@ -50,7 +51,7 @@ export const Image: FC<ImageProps> = ({
 
     const imageTag = display == 'Static' ? (
         <picture className="amp-dc-image">
-            <img loading="lazy" src={`//${image.endpoint}.a.bigcontent.io/v1/static/${image.name}`} className="amp-dc-image-pic" alt={imageAltText} />
+            <img data-testid="Image-ImgTag" loading="lazy" src={`//${image.endpoint}.a.bigcontent.io/v1/static/${image.name}`} className="amp-dc-image-pic" alt={imageAltText} />
         </picture>
     ) : (
             <picture className="amp-dc-image">
@@ -66,11 +67,11 @@ export const Image: FC<ImageProps> = ({
                 {source({ maxWidth: '768', width: '768', highDensityWidth: '1536', format: 'webp', poiAspect: '1:1' })}
                 {source({ maxWidth: '768', width: '768', highDensityWidth: '1536', poiAspect: '1:1' })}
 
-                <img loading="lazy" src={buildSrcUrl({ width: '1600' })} className="amp-dc-image-pic" alt={imageAltText} />
+                <img data-testid="Image-ImgTag" loading="lazy" src={buildSrcUrl({ width: '1600' })} className="amp-dc-image-pic" alt={imageAltText} />
             </picture>
         );
 
-    return <div className="amp-dc-image-holder">
+    return <Box data-testid="Image" className="amp-dc-image-holder">
         {imageTag}
-    </div>
+    </Box>
 };

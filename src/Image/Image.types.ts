@@ -4,7 +4,7 @@ export interface ImageProps {
     /**
      * Image object
      */
-    image: any;
+    image?: any;
 
     /**
      * Additional query

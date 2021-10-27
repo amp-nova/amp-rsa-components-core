@@ -1,6 +1,6 @@
 // Generated with util/create-component.js
 import React, { FC } from "react";
-import { Link, makeStyles, Typography } from '@material-ui/core';
+import { Box, Link, makeStyles, Typography } from '@material-ui/core';
 import ReactMarkdown from 'markdown-to-jsx';
 import { TextProps } from './Text.types';
 import './Text.scss';
@@ -40,10 +40,10 @@ export const Text: FC<TextProps> = ({
     };
 
     return (
-        <div className="amp-text" style={{textAlign: align}}>
+        <Box data-testid="Text" className="amp-text" style={{textAlign: align}}>
             {
                 text && <ReactMarkdown options={options}>{text}</ReactMarkdown>
             }
-        </div>
+        </Box>
     );
 };

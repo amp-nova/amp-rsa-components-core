@@ -37,7 +37,7 @@ export const Card: React.FC<CardProps> = ({
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm component={MuiCard} className={classes.root}>
+    <Grid item xs={12} sm component={MuiCard} className={classes.root} data-testid="Card">
       <CardContent className={classes.content}>
         {
           image && (
@@ -61,10 +61,10 @@ export const Card: React.FC<CardProps> = ({
       </CardContent>
       <CardActions className={classes.cardActions}>
         {
-          links && links.map((link: any) => {
+          links && links.map((link: any, i: number) => {
             if (link.label) {
               return (
-                <Button className={classes.links}>
+                <Button className={classes.links} key={i}>
                   {link.label}
                 </Button>
               )

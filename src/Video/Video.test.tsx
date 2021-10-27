@@ -2,7 +2,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Video from "./Video";
+import { Video } from "./Video";
 import { VideoProps } from "./Video.types";
 
 describe("Test Component", () => {
@@ -10,18 +10,21 @@ describe("Test Component", () => {
 
   beforeEach(() => {
     props = {
-      foo: "bar"
-    };
+      "video": {
+          "name": "AnyaFinn-Shoppable",
+          "endpoint": "amprsa",
+          "defaultHost": "cdn.media.amplience.net"
+      }
+  };
   });
 
   const renderComponent = () => render(<Video {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
+  it("should render AnyaFinn-Shoppable text correctly", () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("Video");
 
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toContainHTML("<video")
   });
 });

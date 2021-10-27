@@ -1,6 +1,6 @@
 // Generated with util/create-component.js
 import React, { FC } from "react";
-import { Link, Typography, Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core';
+import { Link, Typography, Accordion, AccordionSummary, AccordionDetails, Box } from '@material-ui/core';
 import ReactMarkdown from 'markdown-to-jsx';
 import { ExpandMore } from '@material-ui/icons';
 import { FAQProps } from './FAQ.types';
@@ -31,12 +31,12 @@ export const FAQ: FC<FAQProps> = ({
     };
 
     return (
-        <div data-testid="FAQ" className="amp-faq">
+        <Box data-testid="FAQ" className="amp-faq">
             <Typography variant="h3" component="h3" align="center">{header}</Typography>
-            <div style={{ marginTop: 30 }}>
+            <Box style={{ marginTop: 30 }}>
                 {
                     items && items.map((item: any, i: number) => {
-                        return <div key={i}>
+                        return <Box key={i}>
                             <Accordion>
                                 <AccordionSummary expandIcon={<ExpandMore />}>
                                     <Typography variant="h4" component="p">{item.question}</Typography>
@@ -47,10 +47,10 @@ export const FAQ: FC<FAQProps> = ({
                                     }
                                 </AccordionDetails>
                             </Accordion>
-                        </div>
+                        </Box>
                     })
                 }
-            </div>
-        </div>
+            </Box>
+        </Box>
     );
 };

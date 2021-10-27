@@ -10,16 +10,42 @@ describe("Test Component", () => {
 
   beforeEach(() => {
     props = {
-    };
+      "image": {
+          "image": {
+              "_meta": {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+              },
+              "name": "banner-text-top-right-2-1-large-desktop",
+              "endpoint": "amprsa",
+              "defaultHost": "cdn.media.amplience.net"
+          },
+          "imageAltText": "New Collection",
+          "seoText": "new-collection, summer"
+      },
+      "opacity": 0.9,
+      "textPositioning": {
+          "textPositionHorizontal": "center",
+          "textPositionVertical": "middle"
+      },
+      "bannerText": {
+          "header": "New Collection",
+          "subheader": "Sub-Header",
+          "description": "Description"
+      },
+      "ctaSettings": {
+          "buttonText": "Discover Now!",
+          "linkUrl": "/"
+      }
+  };
   });
 
   const renderComponent = () => render(<Banner {...props} />);
 
-  it("should render foo text correctly", () => {
+  it("should render New Collection text correctly", () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("Banner");
 
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toHaveTextContent("New Collection");
   });
 });

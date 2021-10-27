@@ -9,8 +9,8 @@ export interface FAQProps {
     /**
      * List of Questions and Answers
      */
-    items: [{
+    items: {
         question: String;
-        anwser: String;
-    }];
+        answer: String;
+    }[];
 }

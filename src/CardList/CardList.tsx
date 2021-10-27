@@ -1,5 +1,5 @@
 // Generated with util/create-component.js
-import { Grid, Typography } from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import { Card } from "../Card";
 
@@ -10,7 +10,7 @@ export const CardList: React.FC<CardListProps> = ({
     cards
  }) => {
     return (
-        <div>
+        <Box data-testid="CardList">
         {
             header && ( 
                 <Typography variant="h2" component="h2">
@@ -29,6 +29,6 @@ export const CardList: React.FC<CardListProps> = ({
                 </Grid>
             )
         }
-        </div>
+        </Box>
     )
  };

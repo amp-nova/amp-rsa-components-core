@@ -19,7 +19,7 @@ export const Banner: React.FC<BannerProps> = ({
         textPositioning?.textPositionVertical && alignement.push(textPositioning.textPositionVertical);
 
         return (
-            <Box className="container">
+            <Box className="container" data-testid="Banner">
                 <Image {...image} />
                 <Box className={alignement.join(" ")} style={{opacity, textAlign: 'left'}}>
                     {
