@@ -1,32 +1,10 @@
 // Generated with util/create-component.js
 import React from "react";
 import { Image } from "../Image";
-import { makeStyles, Grid, CardContent, Typography, Card as MuiCard, CardActions, Button } from '@material-ui/core';
+import { Grid, CardContent, Typography, Card as MuiCard, CardActions, Button } from '@material-ui/core';
 import { CardProps } from "./Card.types";
 
-const useStyles = makeStyles({
-  root: {
-    display: "flex",
-    flexDirection: "column" as "column",
-    justifyContent: "space-between",
-    border: "none",
-    boxShadow: "none",
-    textAlign: "center"
-  },
-  content: {
-    padding: 10
-  },
-  cardActions: { 
-    justifyContent: "center",
-    paddingBottom: 20
-  },
-  links: { 
-    paddingLeft: 20, 
-    paddingRight: 20, 
-    color: "#fff", 
-    backgroundColor: "#000" 
-  }
-});
+import "./Card.scss";
 
 export const Card: React.FC<CardProps> = ({
   image,
@@ -34,46 +12,46 @@ export const Card: React.FC<CardProps> = ({
   description,
   links
 }) => {
-  const classes = useStyles();
-
   return (
-    <Grid item xs={12} sm component={MuiCard} className={classes.root} data-testid="Card">
-      <CardContent className={classes.content}>
-        {
-          image && (
-            <Image {...image} />
-          )
-        }
-        {
-          cardName && (
-            <Typography variant="h2" component="h2" style={{ marginTop: 15, marginBottom: 15 }}>
-              {cardName}
-            </Typography>
-          )
-        }
-        {
-          description && (
-            <Typography component="p">
-              {description}
-            </Typography>
-          )
-        }
-      </CardContent>
-      <CardActions className={classes.cardActions}>
-        {
-          links && links.map((link: any, i: number) => {
-            if (link.label) {
-              return (
-                <Button className={classes.links} key={i}>
-                  {link.label}
-                </Button>
-              )
-            } else {
-              return null;
-            }
-          })
-        }
-      </CardActions>
+    <Grid item xs={12} sm className="card-root" data-testid="Card">
+      <MuiCard className="card-container">
+        <CardContent className="card-content">
+          {
+            image && (
+              <Image {...image} />
+            )
+          }
+          {
+            cardName && (
+              <Typography variant="h2" component="h2" style={{ marginTop: 15, marginBottom: 15 }}>
+                {cardName}
+              </Typography>
+            )
+          }
+          {
+            description && (
+              <Typography component="p">
+                {description}
+              </Typography>
+            )
+          }
+        </CardContent>
+        <CardActions className="card-actions">
+          {
+            links && links.map((link: any, i: number) => {
+              if (link.label) {
+                return (
+                  <Button className="card-links" href={link.value} key={i}>
+                    {link.label}
+                  </Button>
+                )
+              } else {
+                return null;
+              }
+            })
+          }
+        </CardActions>
+      </MuiCard>
     </Grid>
   )
 };

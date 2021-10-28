@@ -1,0 +1,30 @@
+@import "../variables.scss";
+@import "../typography.scss";
+
+.card-root {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+
+        .card-content {
+            padding: 10px;
+        }
+        
+        .card-actions { 
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+        
+        .card-links { 
+            padding-left: 20px;
+            padding-right: 20px;
+            color: #fff;
+            background-color: #000;
+        }
+    }
+}
+
