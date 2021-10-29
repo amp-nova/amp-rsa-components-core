@@ -1,9 +1,6 @@
 # Amplience RSA React Component Library
 
-[![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/harvey/react-component-library)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
-This project skeleton was created to help people get started with creating their own React component library using:
+This project was created to help people get started with creating their own React component library using:
 
 - [Rollup](https://github.com/rollup/rollup)
 - [Sass](https://sass-lang.com/)
@@ -13,10 +10,6 @@ It also features:
 
 - [Storybook](https://storybook.js.org/) to help you create and show off your components
 - [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) enabling testing of the components
-
-[**Read my blog post about why and how I created this project skeleton ▸**](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
-
-[Check out this CodeSandbox to see the component library in action ▸](https://codesandbox.io/s/harvey-component-library-example-y2b60)
 
 ## Development
 
@@ -46,11 +39,11 @@ To export your Storybook as static files:
 npm run storybook:export
 ```
 
-You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. I've hosted this library at: https://www.harveydelaney.com/react-component-library
+You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. I've hosted this library at: https://www.xxxdelaney.com/react-component-library
 
 ### Generating New Components
 
-I've included a handy NodeJS util file under `util` called `create-component.js`. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
+Included is a handy NodeJS util file under `util` called `create-component.js`. Instead of copy pasting components to create a new component, you can instead run this command to generate all the files you need to start building out a new component. To use it:
 
 ```
 npm run generate YourComponentName
@@ -112,29 +105,29 @@ The `"prepublishOnly": "npm run build"` script in `package.json` will execute be
 
 I recommend you host the component library using NPM. However, if you don't want to use NPM, you can use GitHub to host it instead.
 
-You'll need to remove `build/` from `.gitignore`, build the component library (`npm run build`), add, commit and push the contents of `build`. [See this branch for an example.](https://github.com/HarveyD/react-component-library/tree/host-via-github)
+You'll need to remove `build/` from `.gitignore`, build the component library (`npm run build`), add, commit and push the contents of `build`.
 
 You can then install your library into other projects by running:
 
 ```
-npm i --save git+https://github.com/HarveyD/react-component-library.git#branch-name
+npm i --save git+https://github.com/XXX/react-component-library.git#branch-name
 ```
 
 OR
 
 ```
-npm i --save github:harveyd/react-component-library#branch-name
+npm i --save github:xxx/react-component-library#branch-name
 ```
 
 ## Usage
 
-Let's say you created a public NPM package called `harvey-component-library` with the `TestComponent` component created in this repository.
+Let's say you created a public NPM package called `xxx-component-library` with the `TestComponent` component created in this repository.
 
 Usage of the component (after the library installed as a dependency into another project) will be:
 
 ```TSX
 import React from "react";
-import { TestComponent } from "harvey-component-library";
+import { TestComponent } from "xxx-component-library";
 
 const App = () => (
   <div className="app-container">
@@ -146,21 +139,21 @@ const App = () => (
 export default App;
 ```
 
-[Check out this Code Sandbox for a live example.](https://codesandbox.io/s/harvey-component-library-example-y2b60?file=/src/App.js)
+[Check out this Code Sandbox for a live example.](https://codesandbox.io/s/xxx-component-library-example-y2b60?file=/src/App.js)
 
 ### Using Component Library SASS Variables
 
 I've found that it's helpful to export SASS variables to projects consuming the library. As such, I've added the `rollup-plugin-copy` NPM package and used it to copy the [`src/typography.scss`](src/typography.scss) and [`variables.scss`](src/variables.scss) into the `build` directory as part of the Rollup bundle process. This allows you to use these variables in your projects consuming the component library.
 
-For example, let's say you installed `harvey-component-library` into your project. To use the exported variables/mixins, in a SASS file you would do the following:
+For example, let's say you installed `xxx-component-library` into your project. To use the exported variables/mixins, in a SASS file you would do the following:
 
 ```Sass
-@import '~harvey-component-library/build/typography';
+@import '~xxx-component-library/build/typography';
 
 .example-container {
     @include heading;
 
-    color: $harvey-white;
+    color: $xxx-white;
 }
 ```
 
@@ -195,23 +188,15 @@ postcss({
 })
 ```
 
-#### Styled Components
-
-If you want to use [`styled-components`](https://styled-components.com/), the changes required are a bit more involved. As such, I've created a branch where I've got `styled-components` working in this component library, [check it out here](https://github.com/HarveyD/react-component-library/tree/styled-components).
-
 ### Component Code Splitting
 
 Code splitting of your components is not supported by default.
 
-[Read this section of my blog post](https://blog.harveydelaney.com/creating-your-own-react-component-library/#introducing-code-splitting-optional-) to find out how and why you would enable code splitting of your components. In summary, code splitting enables users to import components in isolation like:
-
 ```
-import TestComponent from 'harvey-component-library/build/TestComponent';
+import TestComponent from 'xxx-component-library/build/TestComponent';
 ```
 
 This can reduce the bundle size for projects using older (CJS) module formats.
-
-You can check out [this branch](https://github.com/HarveyD/react-component-library/tree/code-splitting) or [this commit](https://github.com/HarveyD/react-component-library/commit/94631be5a871f3b39dbc3e9bd3e75a8ae5b3b759) to see what changes are neccesary to implement it.
 
 Please note, there's an issue with code splitting and using `rollup-plugin-postcss`. I recommend using `rollup-plugin-sass` instead alongside code splitting.
 

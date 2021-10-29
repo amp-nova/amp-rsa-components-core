@@ -21,6 +21,8 @@ addParameters({
         'Overview/Getting Started',
         'Overview/Themes',
         'Overview/**',
+        'Documentation/Introduction',
+        'Documentation/**',
         'Usage/**',
         'Views/**',
         'Layout/**',
