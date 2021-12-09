@@ -1,0 +1,19 @@
+// Variables
+$amp-black: #131111;
+$amp-white: #e0e0e0;
+$amp-red: #ff2323;
+$amp-green: #005f20;
+$amp-blue: #070bce;
+$amp-gray: #494949;
+
+:root {
+  --background: #fff;
+  --font-color: #494949;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #3c3c3c;
+    --font-color: #fafafa;
+  }
+}
