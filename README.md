@@ -1,4 +1,4 @@
-# Amplience RSA React Component Library
+# Amplience Reference Storefront Architecture – Core React Components Library
 
 This project was created to help people get started with creating their own React component library using:
 
